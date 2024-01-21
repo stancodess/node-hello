@@ -2,8 +2,10 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+const mongoConnectionString = process.env.MONGO_URL;
+
 app.get('/', (req, res) => {
-  res.send('Hola Mundo, soy Stalin Caiche Morán');
+  res.send`Stalin Caiche: Connection String de MongoDB: ${mongoConnectionString}`);
 });
 
 app.listen(port, () => {
